@@ -9,5 +9,6 @@ RUN chmod +x /start_logstash.sh
 
 ENV AWS_REGION "eu-west-1"
 EXPOSE 12201/udp
-CMD ["start_logstash.sh"]
+WORKDIR /
+CMD ["sh", "start_logstash.sh"]
 # ELASTICSEARCH_HOST needs to be passed through an environment variable (-e)
